@@ -34,10 +34,10 @@
             <input id="inputEmail" class="form-control" type="mail" placeholder="Digite e-mail" value="{{ $contato[0]->email }}">
         </div>
 
-        <div class="form-group">
+        {{-- <div class="form-group">
             <label for="nome">Criado em:</label>
             <input id="inputCreatedAt" class="form-control" type="date" placeholder="Digite e-mail" value="{{ $contato[0]->created_at }}" disabled>
-        </div>
+        </div> --}}
 
         <div class="botao form-group">
             <button class="btn btn-primary" type="submit">Salvar</button>
@@ -62,8 +62,7 @@
             'nome': window.document.getElementById('inputNome').value,
             'telefone_residencial':  window.document.getElementById('inputTelRes').value,
             'telefone_celular': window.document.getElementById('inputTelCel').value,
-            'email': window.document.getElementById('inputEmail').value,
-            'criadoEm': window.document.getElementById('inputCreatedAt').value
+            'email': window.document.getElementById('inputEmail').value
         };
 
         $.ajax({

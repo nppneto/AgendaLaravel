@@ -90,8 +90,7 @@ class ContatoController extends Controller
             'nome' => $request->post('nome'),
             'telres' => $request->post('telefone_residencial'),
             'telcel' => $request->post('telefone_celular'),
-            'email' => $request->post('email'),
-            'criadoEm' => $request->post('criadoEm')
+            'email' => $request->post('email')
         );
 
         $contatosClass = new ContatoClass();

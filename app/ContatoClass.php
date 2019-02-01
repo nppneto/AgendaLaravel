@@ -15,7 +15,7 @@ class ContatoClass extends Model
                         telefone_residencial, 
                         telefone_celular, 
                         email, 
-                        DATE_FORMAT(created_at, '%d/%m/%Y') AS created_at, 
+                        created_at, 
                         updated_at
                     FROM 
                         tb_contato";
@@ -58,8 +58,7 @@ class ContatoClass extends Model
                         nome_completo,
                         telefone_residencial,
                         telefone_celular,
-                        email,
-                        DATE_FORMAT(created_at, '%Y-%m-%d') AS created_at
+                        email
                     FROM
                         tb_contato
                     WHERE
@@ -78,8 +77,7 @@ class ContatoClass extends Model
                         nome_completo = :nome, 
                         telefone_residencial = :telres, 
                         telefone_celular = :telcel, 
-                        email = :email, 
-                        created_at = :criadoEm, 
+                        email = :email,
                         updated_at = NOW()
                     WHERE 
                         id = :id";
@@ -89,8 +87,7 @@ class ContatoClass extends Model
                                         ':nome' => $fields['nome'],
                                         ':telres' => $fields['telres'],
                                         ':telcel' => $fields['telcel'],
-                                        ':email' => $fields['email'],
-                                        ':criadoEm' => $fields['criadoEm']
-                                        ]);
+                                        ':email' => $fields['email']
+                                    ]);
     }
 }
