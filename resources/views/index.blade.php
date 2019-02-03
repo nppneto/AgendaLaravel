@@ -10,7 +10,6 @@
 
     <br/>
     <br/>
-    <br/>
 
     <table class="table">
         <thead>
@@ -33,7 +32,7 @@
                     <td>{{ $contato->created_at }}</td>
                     <td>
                         <a class="btn btn-primary" href="contato/{{ $contato->id }}/edit">Editar</a>
-                        <a class="btn btn-primary" href="">Deletar</a>
+                        <a class="btn btn-primary" href="contato/{{ $contato->id }}/delete">Deletar</a>
                     </td>
                 </tr>
             @endforeach

@@ -16,7 +16,8 @@ Route::post('/contato', 'ContatoController@store');
 Route::get('/contato/novo', 'ContatoController@create')->name('cadContato');
 Route::get('contato/{contato}', 'ContatoController@show');
 Route::put('contato/{contato}', 'ContatoController@update');
-Route::delete('contato/{contato}', 'ContatoController@destroy');
+Route::get('contato/{contato}/delete', 'ContatoController@delete');
+Route::put('contato/{contato}', 'ContatoController@destroy');
 Route::get('contato/{contato}/edit', 'ContatoController@edit');
 
 // Route::resource('contato', 'ContatoController');

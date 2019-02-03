@@ -15,10 +15,11 @@ class ContatoClass extends Model
                         telefone_residencial, 
                         telefone_celular, 
                         email, 
-                        created_at, 
-                        updated_at
+                        DATE_FORMAT(created_at, '%d/%m/%Y') AS created_at
                     FROM 
-                        tb_contato";
+                        tb_contato
+                    WHERE
+                        ativo = 1";
 
         $contatos = DB::select($query);
 
@@ -35,7 +36,8 @@ class ContatoClass extends Model
                                 telefone_celular, 
                                 email, 
                                 created_at, 
-                                updated_at
+                                updated_at,
+                                ativo
                             )
                     VALUES
                             (
@@ -44,7 +46,8 @@ class ContatoClass extends Model
                                 :telcel, 
                                 :email, 
                                 NOW(), 
-                                NULL
+                                NULL,
+                                1
                             )";
         
         $contato = DB::insert($query, $fields);
@@ -89,5 +92,17 @@ class ContatoClass extends Model
                                         ':telcel' => $fields['telcel'],
                                         ':email' => $fields['email']
                                     ]);
+    }
+
+    public function DeletarContato($id) {
+
+        $query = "UPDATE
+                        tb_contato
+                    SET
+                        ativo = 0
+                    WHERE
+                        id = :id";
+        
+        $contato = DB::update($query, [':id' => $id]);
     }
 }

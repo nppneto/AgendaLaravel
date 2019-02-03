@@ -103,8 +103,17 @@ class ContatoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    public function delete($id)
+    {
+        $contatosClass = new ContatoClass();
+        $contato = $contatosClass->ListarContatoByID($id);
+
+        return view('delete', ['contato' => $contato]);
+    }
+
     public function destroy($id)
     {
-        //
+        $contatosClass = new ContatoClass();
+        $contatosClass->DeletarContato($id);
     }
 }
