@@ -15,7 +15,8 @@ class ContatoClass extends Model
                         telefone_residencial, 
                         telefone_celular, 
                         email, 
-                        DATE_FORMAT(created_at, '%d/%m/%Y') AS created_at
+                        DATE_FORMAT(created_at, '%d/%m/%Y') AS created_at,
+                        ativo
                     FROM 
                         tb_contato
                     WHERE

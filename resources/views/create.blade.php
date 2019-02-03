@@ -80,7 +80,7 @@
         });
 
     </script>
-    <script src="{{url('assets/js/jquery-3.3.1.min.js')}}"></script>
+    <script src="{{url('assets/js/jquery/jquery-3.3.1.min.js')}}"></script>
 
 @endsection
 

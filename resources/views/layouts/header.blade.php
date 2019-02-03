@@ -29,6 +29,6 @@
             </div>
         </nav>
 
-    <div class="container">
+    <div class="container col-sm">
         
         @yield('content')
